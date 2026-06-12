@@ -1,6 +1,6 @@
 # MubarakLab — studio site
 
-Static site for [mubaraklab.com](https://mubaraklab.com). Plain HTML/CSS, no
+Static site for [mubaraklabs.com](https://mubaraklabs.com). Plain HTML/CSS, no
 build step. Hosted on GitHub Pages.
 
 ## Structure
@@ -36,8 +36,8 @@ has in-app purchases, update those sections accordingly.
 
 The pages go live at:
 
-- `https://mubaraklab.com/privacy/focustimer/`
-- `https://mubaraklab.com/terms/focustimer/`
+- `https://mubaraklabs.com/privacy/focustimer/`
+- `https://mubaraklabs.com/terms/focustimer/`
 
 Commit and push to deploy:
 
