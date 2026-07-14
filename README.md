@@ -8,8 +8,9 @@ build step. Hosted on GitHub Pages.
 ```
 index.html              Landing page
 styles.css              Shared styles (auto dark mode)
-privacy/_template/      Privacy policy template
-terms/_template/        Terms of use template
+    privacy/_template/      Privacy policy template
+    terms/_template/        Terms of use template
+    support/                App support pages
 404.html                Not-found page
 CNAME                   Custom domain for GitHub Pages
 ```
