@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Open a Hearthwild field challenge and try to find a kinder route.">
+  <meta name="theme-color" content="#061c20">
+  <title>Hearthwild Field Challenge</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="game-page">
+  <main class="challenge-shell">
+    <a class="wordmark" href="../">HEARTHWILD</a>
+    <section class="challenge-card" aria-labelledby="challenge-title">
+      <p class="eyebrow">Incoming field record</p>
+      <h1 id="challenge-title">Can you find a kinder route?</h1>
+      <p id="challenge-copy" class="hero-copy">A player invited you to restore the same living field.</p>
+      <div class="stat-row" aria-label="Challenge result">
+        <div class="stat"><strong id="field">Glassroot</strong><span>Field</span></div>
+        <div class="stat"><strong id="progress">—</strong><span>Recovered</span></div>
+        <div class="stat"><strong id="turns">—</strong><span>Turns</span></div>
+        <div class="stat"><strong id="blight">—</strong><span>Blight</span></div>
+      </div>
+      <p id="purchase-note"></p>
+      <div class="challenge-actions">
+        <a id="open-app" href="https://apps.apple.com/app/hearthwild/id6795368144">Open in Hearthwild</a>
+        <a href="https://apps.apple.com/app/hearthwild/id6795368144">Get it on the App Store</a>
+      </div>
+    </section>
+    <p class="legal-row">Challenge links contain only field and public result totals—never a player identity or campaign save.</p>
+  </main>
+  <script>
+    (() => {
+      const params = new URLSearchParams(location.search);
+      const fields = {
+        glassrootSurvey: "The Glassroot Verge",
+        rootwellChorus: "Rootwell Chorus",
+        tideglassConfluence: "Memory Confluence",
+        lumenfenBraid: "Lumenfen Braid",
+        lumenfenParallax: "Lumenfen Parallax",
+        lumenfenConcordance: "Lumenfen Concordance",
+        asterreachCanopy: "Asterreach Canopy"
+      };
+      const rawField = params.get("field");
+      const field = fields[rawField] || "Glassroot";
+      const safeNumber = (key) => {
+        const value = Number.parseInt(params.get(key) || "", 10);
+        return Number.isFinite(value) && value >= 0 ? value : null;
+      };
+      const progressMatch = /^(\d+)-(\d+)$/.exec(params.get("progress") || "");
+      const turns = safeNumber("turns");
+      const blight = safeNumber("blight");
+      const outcome = params.get("outcome") === "victory" ? "restored" : "sealed";
+
+      document.getElementById("field").textContent = field;
+      document.getElementById("turns").textContent = turns ?? "—";
+      document.getElementById("blight").textContent = blight ?? "—";
+      document.getElementById("progress").textContent = progressMatch ? `${progressMatch[1]}/${progressMatch[2]}` : "—";
+      document.getElementById("challenge-copy").textContent = `This ${field} route was ${outcome}. Try the same field and improve its turns or Blight.`;
+
+      if (rawField && rawField !== "glassrootSurvey") {
+        document.getElementById("purchase-note").textContent = "This is an advanced field. The Full Living World permanent purchase may be required; Glassroot remains free.";
+      }
+
+      const appURL = new URL("hearthwild://challenge/open");
+      params.forEach((value, key) => appURL.searchParams.set(key, value));
+      document.getElementById("open-app").href = appURL.toString();
+    })();
+  </script>
+</body>
+</html>
