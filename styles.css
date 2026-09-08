@@ -169,7 +169,8 @@ a {
   position: relative;
 }
 
-.game-visual img {
+.game-visual img,
+.game-visual video {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 5;
@@ -178,6 +179,28 @@ a {
   border-radius: 2rem;
   border: 1px solid color-mix(in srgb, var(--water) 45%, transparent);
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.45);
+}
+
+.handoff-steps {
+  margin: 1.75rem 0;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--deep) 68%, transparent);
+  color: #d7e7e4;
+}
+
+.handoff-steps h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.2rem;
+}
+
+.handoff-steps ol {
+  margin: 0;
+  padding-left: 1.35rem;
+}
+
+.handoff-steps li + li {
+  margin-top: 0.5rem;
 }
 
 .game-section {
@@ -271,7 +294,8 @@ a {
     min-height: auto;
   }
 
-  .game-visual img {
+  .game-visual img,
+  .game-visual video {
     aspect-ratio: 16 / 10;
   }
 

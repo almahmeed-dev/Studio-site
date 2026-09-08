@@ -14,7 +14,7 @@
     <section class="challenge-card" aria-labelledby="challenge-title">
       <p class="eyebrow">Incoming field record</p>
       <h1 id="challenge-title">Can you find a kinder route?</h1>
-      <p id="challenge-copy" class="hero-copy">A player invited you to restore the same living field.</p>
+      <p id="challenge-copy" class="hero-copy">A player shared a Hearthwild field record.</p>
       <div class="stat-row" aria-label="Challenge result">
         <div class="stat"><strong id="field">Glassroot</strong><span>Field</span></div>
         <div class="stat"><strong id="progress">—</strong><span>Recovered</span></div>
@@ -22,16 +22,36 @@
         <div class="stat"><strong id="blight">—</strong><span>Blight</span></div>
       </div>
       <p id="purchase-note"></p>
+      <div class="handoff-steps" aria-labelledby="handoff-title">
+        <h2 id="handoff-title">Open the record in Hearthwild</h2>
+        <ol>
+          <li>If Hearthwild is installed, choose <strong>Open in Hearthwild</strong>.</li>
+          <li>If it is not installed, download it from the App Store.</li>
+          <li>After installation, return to this same page and choose <strong>Open in Hearthwild</strong>. This page keeps the public record on this device.</li>
+        </ol>
+      </div>
       <div class="challenge-actions">
         <a id="open-app" href="https://apps.apple.com/app/hearthwild/id6795368144">Open in Hearthwild</a>
-        <a href="https://apps.apple.com/app/hearthwild/id6795368144">Get it on the App Store</a>
+        <a id="get-app" href="https://apps.apple.com/app/hearthwild/id6795368144">Get it on the App Store</a>
       </div>
     </section>
     <p class="legal-row">Challenge links contain only field and public result totals—never a player identity or campaign save.</p>
   </main>
   <script>
     (() => {
-      const params = new URLSearchParams(location.search);
+      const storedQueryKey = "hearthwild.public-field-record";
+      let retainedQuery = location.search;
+      try {
+        if (location.search.length > 1) {
+          localStorage.setItem(storedQueryKey, location.search);
+        } else {
+          retainedQuery = localStorage.getItem(storedQueryKey) || "";
+        }
+      } catch {
+        // The record still opens when private browsing blocks local storage;
+        // only post-install retention is unavailable in that browser.
+      }
+      const params = new URLSearchParams(retainedQuery);
       const fields = {
         glassrootSurvey: "The Glassroot Verge",
         rootwellChorus: "Rootwell Chorus",
@@ -43,6 +63,8 @@
       };
       const rawField = params.get("field");
       const field = fields[rawField] || "Glassroot";
+      const isComparableChallenge = rawField === "glassrootSurvey"
+        && (params.get("preset") === "glassroot-fixed-v1" || !params.has("preset"));
       const safeNumber = (key) => {
         const value = Number.parseInt(params.get(key) || "", 10);
         return Number.isFinite(value) && value >= 0 ? value : null;
@@ -56,10 +78,15 @@
       document.getElementById("turns").textContent = turns ?? "—";
       document.getElementById("blight").textContent = blight ?? "—";
       document.getElementById("progress").textContent = progressMatch ? `${progressMatch[1]}/${progressMatch[2]}` : "—";
-      document.getElementById("challenge-copy").textContent = `This ${field} route was ${outcome}. Try the same field and improve its turns or Blight.`;
+      document.getElementById("challenge-title").textContent = isComparableChallenge
+        ? "Can you find a kinder route?"
+        : "An advanced field record was shared.";
+      document.getElementById("challenge-copy").textContent = isComparableChallenge
+        ? `This ${field} route was ${outcome}. Open the fixed free preset and improve its turns or Blight.`
+        : `This ${field} route was ${outcome}. It is a showcase of the result, not an exact playable recreation of its doctrine, covenant, or campaign branch.`;
 
-      if (rawField && rawField !== "glassrootSurvey") {
-        document.getElementById("purchase-note").textContent = "This is an advanced field. The Full Living World permanent purchase may be required; Glassroot remains free.";
+      if (!isComparableChallenge) {
+        document.getElementById("purchase-note").textContent = "Advanced field access may require the Full Living World permanent purchase and the matching campaign progression. Glassroot remains free.";
       }
 
       const appURL = new URL("hearthwild://challenge/open");
