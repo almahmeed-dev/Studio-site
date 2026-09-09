@@ -321,3 +321,40 @@ footer p {
   font-size: 0.875rem;
   margin-bottom: 2rem;
 }
+
+.card {
+  margin: 1rem 0;
+  padding: 1.25rem;
+  border: 1px solid var(--rule);
+  border-radius: 1rem;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.button {
+  display: inline-block;
+  margin: 1rem 0;
+  padding: 0.7rem 1rem;
+  border-radius: 0.75rem;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.screenshots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.screenshots img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 15%);
+}
