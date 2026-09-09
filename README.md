@@ -11,6 +11,7 @@ styles.css              Shared styles (auto dark mode)
     privacy/_template/      Privacy policy template
     terms/_template/        Terms of use template
     support/                App support pages
+    references/             App-specific educational references
 404.html                Not-found page
 CNAME                   Custom domain for GitHub Pages
 ```
