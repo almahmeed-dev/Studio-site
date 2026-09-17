@@ -5,6 +5,8 @@ build step. Hosted on GitHub Pages.
 
 ## Structure
 
+Take Studio pages live at `/takestudio/`, `/support/takestudio/`, `/privacy/takestudio/` and `/terms/takestudio/`. They use the existing studio contact, describe the implemented local workflow and link Apple's standard EULA. The app is marked in development; these pages do not advertise an available App Store build or promise an unconfigured trial.
+
 ```
 index.html              Landing page
 styles.css              Shared styles (auto dark mode)
