@@ -1,0 +1,28 @@
+:root { color-scheme: light dark; --paper: #fbfcf9; --ink: #182a23; --muted: #4d6056; --line: #d6ded5; --court: #20563e; --card: #eef3e8; }
+@media (prefers-color-scheme: dark) { :root { --paper: #111b16; --ink: #edf3e9; --muted: #b9c8b9; --line: #3b5143; --court: #bbe592; --card: #1c3023; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 18px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.wrap { width: min(100%, 46rem); margin: auto; padding: 2.5rem 1.4rem 3rem; }
+a { color: var(--court); text-underline-offset: .18em; overflow-wrap: anywhere; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--court); outline-offset: 4px; border-radius: 2px; }
+.skip { position: absolute; top: -8rem; left: 1rem; padding: .6rem; background: var(--paper); z-index: 2; }
+.skip:focus { top: .5rem; }
+nav { display: flex; gap: .5rem 1.2rem; flex-wrap: wrap; margin: .75rem 0 2.5rem; }
+nav a { display: inline-block; padding: .35rem 0; }
+h1 { font-size: clamp(2rem, 7vw, 3.25rem); line-height: 1.12; letter-spacing: -.035em; margin: .4rem 0 1rem; overflow-wrap: anywhere; }
+h2 { font-size: 1.4rem; line-height: 1.3; margin: 2.6rem 0 .7rem; }
+h3 { font-size: 1.08rem; line-height: 1.4; margin: 1.7rem 0 .5rem; }
+p { margin: .8rem 0; }
+ul, ol { padding-left: 1.4rem; }
+li { margin: .5rem 0; }
+.eyebrow { color: var(--court); letter-spacing: .1em; text-transform: uppercase; font-size: .8rem; font-weight: 750; }
+.lead { color: var(--muted); font-size: 1.2rem; }
+.status, .callout { background: var(--card); border: 1px solid var(--line); border-radius: 1rem; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+.status p, .callout p { margin: .2rem 0; }
+.button { display: inline-block; border: 2px solid var(--court); padding: .65rem 1rem; border-radius: .7rem; font-weight: 700; text-decoration: none; }
+.updated { font-size: .9rem; color: var(--muted); }
+footer { border-top: 1px solid var(--line); margin-top: 3.5rem; padding-top: 1rem; font-size: .9rem; color: var(--muted); }
+footer nav { margin: .5rem 0; }
+code { font-size: .9em; overflow-wrap: anywhere; }
+@media (max-width: 25rem) { .wrap { padding-inline: 1rem; } body { font-size: 17px; } }
+@media print { nav, .skip { display: none; } .wrap { max-width: none; } a { color: inherit; } }
