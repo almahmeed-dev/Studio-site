@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Help with CutBench cutting plans, kerf and trims, unique physical stock, actual cuts, measured offcuts, exports and private backups.">
+  <meta name="color-scheme" content="light dark">
+  <title>CutBench — Guide &amp; Support</title>
+  <link rel="canonical" href="https://mubaraklabs.com/support/cutbench/">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../cutbench/site.css">
+</head>
+<body class="cutbench-site">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main" class="wrap" tabindex="-1">
+    <header>
+      <p><a href="../../">MubarakLab</a></p>
+      <h1>CutBench — Guide &amp; Support</h1>
+      <p class="tagline">Help with parts, plans, physical stock and saved workshop records.</p>
+    </header>
+    <nav class="site-nav" aria-label="On this page"><a href="#start">Get started</a><a href="#cuts">Actual cuts</a><a href="#exports">Exports</a><a href="#backup">Backups</a><a href="#help">Get help</a></nav>
+    <section aria-labelledby="start">
+      <h2 id="start">Make your first plan</h2>
+      <ol>
+        <li><strong>Explore the sample.</strong> Choose <strong>Explore the sample</strong> from Welcome or the empty Projects list, then open <strong>Sample — shelves and rails</strong>. Its workshop data is fictional.</li>
+        <li><strong>Review parts and stock.</strong> Check quantities, explicit material and thickness, measured dimensions, grain and rotation. For your own project, enter the material you actually have.</li>
+        <li><strong>Generate plans.</strong> Enter kerf and edge trims, select finite sources, and compare the independently verified candidates found.</li>
+        <li><strong>Inspect and save.</strong> Check the diagram and exact list, then save a snapshot. Preview an export before sharing it.</li>
+      </ol>
+      <p>CutBench supports rectangular guillotine sheet partitions and straight board cuts with fixed cross sections, up to 200 expanded parts and 100 selected sources per job, including purchase candidates. Larger jobs can be split into smaller projects.</p>
+      <h2>Kerf, trims and exact dimensions</h2>
+      <p>Kerf is material removed by a cut. Each edge trim is the total removed from that edge, <strong>including kerf</strong>; do not add the trim’s kerf again. Enter actual measured material and review permitted rotation and grain. Display rounding does not change planning dimensions.</p>
+      <h2>Why was no plan found?</h2>
+      <p>The bounded search did not find a complete verified candidate. This does not prove impossibility. Review material identity and thickness, measured dimensions, finite quantities, kerf, inclusive trims, grain and rotation, or try a smaller job. A feasible plan is not automatically optimal or proof of minimum waste.</p>
+      <h2 id="cuts">Planned cuts and actual cuts</h2>
+      <p>A saved plan records proposed geometry. Workshop confirmation means the physical cut <strong>has already happened</strong>. It consumes the parent’s availability and records its children once; ordinary Undo cannot recreate the uncut parent. Corrections append to the history.</p>
+      <p>If saving an actual cut fails, retry saving the <strong>same operation and measurements without cutting again</strong>. If the parent is actually uncut, identify that explicitly through recovery. Measure the material that now exists before replanning.</p>
+      <p>Only measured offcuts you explicitly choose to keep become available stock. Replan unmet parts against actual uncut pieces, rather than a planned remainder or consumed parent. Purchase candidates become real stock only after receipt and measurement.</p>
+      <h2>Why is imported or restored stock Unverified?</h2>
+      <p>A CSV or older backup may describe a piece that already exists or has since been consumed. Reconcile its physical identity and measurements before making it available. Restoring cannot resurrect consumed material or create another availability path for the same piece. Imported executions remain read-only history; reconcile pieces before creating a new job.</p>
+      <h2 id="exports">Exports and labels</h2>
+      <p>Preview plan PDFs, public CSV part lists, selected recorded-history CSV and labels, then choose a destination. Public output omits designated private notes, stock locations, photo metadata and provider paths. Public names and notes you entered, and selected PDF costs, can still be visible; review them before sharing.</p>
+      <p>Selected history CSV includes saved events, operation identities and recorded actual dimensions and kerf in exact ticks. Missing old measurements remain unavailable. Optional recorded inventory loss is distinct from purchase cash. Private correction reasons and stock locations are excluded.</p>
+      <p>A label contains an opaque local piece identity. Scanning looks up the local record; it never confirms a cut, changes inventory or opens an arbitrary URL. Manual record lookup remains available.</p>
+      <p>Choose Compact or Workshop labels, A4 or Letter paper, and outer margin. Material and grain are optional; identity, dimensions and QR remain. Print at actual size and measure the PDF’s 100 mm calibration line. The cutting diagrams remain schematic, not full-size templates.</p>
+      <h2 id="backup">Keep a private workspace backup</h2>
+      <p>A <code>.cutbench</code> backup contains saved projects, immutable plans, physical records, durable command responses, cut history, prices, <strong>private notes, locations and attached photographs</strong>. CutBench does not encrypt this backup. Save it to a destination you control and protect the file.</p>
+      <p>The logical backup excludes unsaved editor drafts and the original workshop’s local pending-cut recovery marker. Resolve unsaved physical cuts in the original workshop before relying on a backup. Restored material needs identity reconciliation; a restore does not resume the original cutting session.</p>
+      <p>App Store redownload and workshop recovery are separate. Reinstalling alone does not promise recovery of the local database. Keep a backup you have verified and understand your device’s backup settings. Do not uninstall as a first troubleshooting step.</p>
+      <h2>Does it work offline?</h2>
+      <p>Core projects, geometry, physical inventory and export preparation run locally. A share, email or cloud-drive destination you choose can require internet. CutBench has no automatic developer-operated cloud synchronization.</p>
+      <h2>Purchase and redownload</h2>
+      <p>CutBench is being prepared as a paid-upfront app with a planned US launch price of $24.99. All included features come with the app; there is no subscription, trial, upgrade tier or in-app purchase. Apple handles the app purchase and redownload. Final availability and storefront prices will be shown by the App Store.</p>
+      <h2 id="help">Contact support</h2>
+      <p>Email <a href="mailto:almahmeed.dev@gmail.com?subject=CutBench%20Support">almahmeed.dev@gmail.com</a> with your iPhone model, iOS version, CutBench version, action attempted and exact displayed error. Include only the details needed to explain the issue.</p>
+      <p>Review every attachment before sending it. A private backup includes workshop notes, locations, prices and photographs; a public plan export omits designated private fields but can still contain public names and notes. Avoid sending passwords or payment details.</p>
+      <p>Support messages and attachments are retained for <strong>90 days</strong>. For requests about information you have sent, contact the same email address.</p>
+      <p>See the <a href="../../privacy/cutbench/">privacy policy</a> for local storage and sharing, and the <a href="../../terms/cutbench/">terms</a> for license and planning scope.</p>
+    </section>
+    <footer>
+      <nav class="site-nav" aria-label="Footer"><a href="../../">MubarakLab</a><a href="../../cutbench/">CutBench</a><a href="../../support/cutbench/">Guide &amp; support</a><a href="../../privacy/cutbench/">Privacy</a><a href="../../terms/cutbench/">Terms</a></nav>
+      <p>&copy; 2026 Mubarak Almahmeed &middot; MubarakLab</p>
+    </footer>
+  </main>
+</body>
+</html>

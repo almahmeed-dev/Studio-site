@@ -1,0 +1,11 @@
+/* CutBench-only additions; keep Studio-site's shared styles.css unchanged. */
+.cutbench-site { overflow-wrap: anywhere; }
+.cutbench-site .site-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; }
+.cutbench-site .site-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0.35rem 0; }
+.cutbench-site :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+.cutbench-site .skip-link { position: absolute; top: 0.5rem; left: 1.25rem; padding: 0.6rem 0.9rem; background: var(--bg); border: 2px solid var(--accent); transform: translateY(-200%); z-index: 1; }
+.cutbench-site .skip-link:focus { transform: translateY(0); }
+.cutbench-site ol { padding-left: 1.5rem; }
+.cutbench-site li + li { margin-top: 0.5rem; }
+.cutbench-site code { font-size: 0.95em; }
+@media (max-width: 30rem) { .cutbench-site .wrap { padding-top: 3rem; } }
