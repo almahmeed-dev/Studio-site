@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sizefolio guide and support: import, physical sizing, sheets, posters, PDF save, versions, backups and recovery for version 1.0.">
+  <meta name="color-scheme" content="light dark">
+  <title>Sizefolio — Guide &amp; Support</title>
+  <link rel="canonical" href="https://mubaraklabs.com/support/sizefolio/">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>Sizefolio — Guide &amp; Support</h1>
+      <p class="tagline">From a selected source to a reviewed printable PDF.</p>
+      <p><strong>Version 1.0 guide.</strong> Sizefolio is being prepared for the App Store. This guide describes its current PDF workflow; direct printing and printer correction inside the app are unavailable.</p>
+    </header>
+    <nav aria-label="On this page">
+      <p><a href="#start">Get started</a> &middot; <a href="#sizing">Sizing</a> &middot; <a href="#imports">Imports</a> &middot; <a href="#backup">Backups</a> &middot; <a href="#help">Get help</a></p>
+    </nav>
+    <section>
+      <h2 id="start">Make your first PDF</h2>
+      <ol>
+        <li><strong>Create a job.</strong> In Jobs, open New (or New job in an empty library), select Sheet, enter a name and choose Create job.</li>
+        <li><strong>Import.</strong> Open Import, then Choose Photos or Choose Files. For a PDF, explicitly select supported pages and choose Import selected. Canceling intake leaves committed work intact.</li>
+        <li><strong>Confirm dimensions.</strong> Select the placed item and open Items. Choose Units, enter Intended width and Intended height, review Content inside box, enable I confirm these intended physical dimensions and Apply. Turn off Aspect lock — derive height from width when you want independent axes.</li>
+        <li><strong>Review the paper.</strong> Open Paper, Paper setup and Printable margins. Check the margins, content and any marks; the declared document margins are separate from a printer’s actual imageable area.</li>
+        <li><strong>Generate.</strong> Open Output and leave Fit complete artwork to page off for intended-size output. Choose Generate current PDF, inspect every Output page in Generated PDF, then Save to Files or Share.</li>
+      </ol>
+      <p>A retained PDF is frozen at its job revision. Later edits do not rewrite it. History keeps retained outputs; an Older revision label and Regenerate current route identify when the job has changed.</p>
+
+      <h2 id="sizing">A print is smaller or larger than expected</h2>
+      <p>Check paper, orientation, margins and the receiving app’s scaling setting. Choose Actual size or 100% for the generated PDF. With Fit complete artwork to page off, output retains reviewed intended item dimensions. With that explicit option on, 100% preserves the reviewed fitted dimensions instead.</p>
+      <p>Fit, Fill and Stretch inside an item frame are separate: Fit can leave blank space, Fill clips to fill the frame, and Stretch changes the two axes independently. The physical frame and drawn-crop readouts are different; an ≈ readout is approximate. Image DPI is guidance, not confirmation of physical size. A digital preview cannot prove a measured paper result.</p>
+
+      <h2>Direct printing and correction</h2>
+      <p>Open system print, Print raw direct-AirPrint target and Save matching profile are unavailable in this version. Save to Files and Share provide canonical, uncompensated PDFs. Generate 100 mm document reference and measurement entry are available, but they do not establish or activate a matching direct-AirPrint profile. References do not shrink to fit an undersized document area.</p>
+      <p>Printer correction would require the complete matching printer, paper, orientation, imageable-area and workflow scope. Missing stable printer identity disables correction. Exported PDFs remain uncompensated, and a system completion callback does not prove paper production or measured size.</p>
+
+      <h2>Repeat layouts and posters</h2>
+      <p>Grid opens Repeat grid; review counts, gaps and the final partial sheet before Apply candidate as one edit. For a Poster job, inspect Poster setup, Overlap and marks and Tile map. Margins, overlap and reserved marks/footer space change capacity. Every planned tile remains, including narrow strips and apparently blank pages, to keep complete coverage.</p>
+
+      <h2 id="imports">An image or PDF is unsupported</h2>
+      <p>Supported images are single-image JPEG, PNG, HEIC and HEIF. Encoded intake is bounded to 40 MiB and 64 MP. Retained normalized sRGB PNG copies are bounded to 40 MP and an 8192-pixel long edge; larger supported input requires explicit reduction review. The retained encoding may differ from the original. GIF, TIFF, arbitrary SVG and multi-image documents are not supported intake formats.</p>
+      <p>PDF intake is bounded to 100 MiB, 500 source pages and up to 50 selected pages per import, with additional page/resource and job limits. Sources must be valid, unencrypted and unrestricted. Selected annotations/widgets, unsupported optional-content layers/resources and a UserUnit other than absent or 1 are rejected rather than silently removed. Prepare a compatible visible source elsewhere; a flattened copy must still pass the supported-page policy.</p>
+      <p>A valid generated PDF can exceed the stricter external-source image-resource budget, so app generation does not guarantee reimport eligibility. For an unavailable cloud file, restore provider access, download through its provider or select a local copy. Once sources are owned, layout and PDF creation run locally.</p>
+
+      <h2>Crop and sensitive content</h2>
+      <p>A crop changes appearance. Hidden source objects or pixels may remain recoverable in exported files and backups. Use a properly redacted source when permanent removal is required.</p>
+
+      <h2 id="backup">Keep editable work safe</h2>
+      <p>Details opens Job details. Enter a Version name and choose Save current committed version for a durable checkpoint. Undo is bounded session history and is not promised after relaunch. Save template preserves a reusable layout with an explicit choice about including owned sources.</p>
+      <p>Export editable backup offers Create validated backup after private-content review, then Save backup to Files. A backup contains complete owned sources, private notes, versions, templates and retained output records. It can contain unselected PDF pages and cropped-out content. It is not encrypted or password-protected. Choose a trusted destination and keep printable PDFs separately.</p>
+      <p>Restore a backup stages and validates before Restore as new records. Existing jobs are preserved on a failed restore, and a valid restore creates fresh records. Archive organizes work; Trash remains recoverable until explicit permanent deletion. Avoid uninstalling the app as a first troubleshooting step. There is no developer server copy from which to recover your library.</p>
+
+      <h2>Interrupted import, generation or save</h2>
+      <p>Keep the last accepted job and retained PDF while checking available storage and provider access. Inspect any offered Recovery routes before discarding an interrupted file. Canceling a share or Files sheet is not proof of saving or delivery. After Files reports a saved copy, inspect the destination copy before relying on it. A slow or blank system picker is not a successful save; preserve the retained output and retry after returning to the app.</p>
+
+      <h2 id="help">Contact support</h2>
+      <p>Email <a href="mailto:almahmeed.dev@gmail.com?subject=Sizefolio%20Support">almahmeed.dev@gmail.com</a> with your iPhone model, iOS version, app/build version, exact steps, error text and expected result. For size issues include paper, orientation, margins and receiving-app scale settings.</p>
+      <p>Help, privacy and diagnostics offers Preview redacted diagnostics and Copy reviewed diagnostics. It does not send a report automatically. Send only the details needed to explain the issue; avoid private artwork, full editable backups, passwords and payment details. See the <a href="../../privacy/sizefolio/">privacy policy</a> for support correspondence and the <a href="../../terms/sizefolio/">terms</a> for purchase and license information.</p>
+    </section>
+    <footer>
+      <p><a href="https://mubaraklabs.com/">MubarakLab</a> &middot; <a href="../../sizefolio/">Sizefolio</a> &middot; <a href="../../privacy/sizefolio/">Privacy</a> &middot; <a href="../../terms/sizefolio/">Terms</a></p>
+      <p>© 2026 MubarakLab</p>
+    </footer>
+  </main>
+</body>
+</html>
