@@ -358,3 +358,18 @@ footer p {
   border-radius: 0.75rem;
   box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 15%);
 }
+
+.store-badge {
+  display: inline-block;
+  margin: 0.5rem 0;
+  line-height: 0;
+}
+
+.store-badge img {
+  border: 0;
+}
+
+.status-note {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}

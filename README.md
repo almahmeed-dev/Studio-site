@@ -5,7 +5,7 @@ build step. Hosted on GitHub Pages.
 
 ## Structure
 
-Take Studio pages live at `/takestudio/`, `/support/takestudio/`, `/privacy/takestudio/` and `/terms/takestudio/`. They use the existing studio contact, describe the implemented local workflow and link Apple's standard EULA. The app is marked in development; these pages do not advertise an available App Store build or promise an unconfigured trial.
+Take Studio pages live at `/takestudio/`, `/support/takestudio/`, `/privacy/takestudio/` and `/terms/takestudio/`. They use the existing studio contact, describe the implemented local workflow and link Apple's standard EULA. The app is live on the App Store; the product page carries its Smart App Banner and store badge.
 
 ```
 index.html              Landing page
@@ -48,3 +48,10 @@ Commit and push to deploy:
 ```sh
 git add -A && git commit -m "Add Focus Timer policy pages" && git push
 ```
+
+## Marketing conventions (MKT-01)
+
+- Live apps carry `<meta name="apple-itunes-app" content="app-id=...">`, Open Graph and Twitter Card tags, and Apple's "Download on the App Store" badge.
+- Store links use `?pt=127572059&ct=site-<page>&mt=8` (`site-home-<app>` on the homepage).
+- `sitemap.xml` and `robots.txt` live at the site root. Add new public pages to the sitemap; unreleased apps get no banner or store link.
+- No analytics or third-party scripts.
