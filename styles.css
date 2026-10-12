@@ -362,11 +362,36 @@ footer p {
 .store-badge {
   display: inline-block;
   margin: 0.5rem 0;
-  line-height: 0;
+  padding: 0.45rem 1.1rem 0.5rem;
+  background: #000;
+  color: #fff;
+  border: 1px solid #a6a6a6;
+  border-radius: 10px;
+  text-decoration: none;
+  line-height: 1.1;
 }
 
-.store-badge img {
-  border: 0;
+.store-badge:hover,
+.store-badge:focus {
+  color: #fff;
+  background: #1d1d1f;
+}
+
+.store-badge-label {
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+
+.store-badge-small {
+  font-size: 0.7rem;
+  letter-spacing: 0.01em;
+}
+
+.store-badge-big {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .status-note {
