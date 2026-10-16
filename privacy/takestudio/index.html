@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="How Take Studio by MubarakLab handles local video projects, permissions, on-device captions, purchases, backups and support.">
+  <meta name="description" content="How Take Studio by MubarakLab handles local video projects, permissions, on-device captions, purchases, install history, reminders, Lock Screen activity, Spotlight, backups and support.">
   <meta name="color-scheme" content="light dark">
   <title>Take Studio — Privacy Policy</title>
   <link rel="canonical" href="https://mubaraklabs.com/privacy/takestudio/">
@@ -13,7 +13,7 @@
   <main class="wrap">
     <header>
       <h1>Take Studio — Privacy Policy</h1>
-      <p class="updated">Last updated: September 17, 2026</p>
+      <p class="updated">Last updated: October 17, 2026</p>
     </header>
     <section>
       <p>Take Studio is developed by MubarakLab. This policy covers the Take Studio app and its information pages. You do not need a Take Studio account. The app has no advertising, analytics SDK or developer-operated service for receiving your projects.</p>
@@ -29,6 +29,22 @@
       <h2>Optional on-device transcription</h2>
       <p>Manual captions work without speech models. Optional automatic transcription processes selected audio on your device when the hardware, language and Apple model are supported. You choose whether to download a needed model from Apple. There is no cloud transcription fallback or external paid inference service. Review automatic captions before applying them.</p>
 
+      <h2>Video conversion and script tools on your device</h2>
+      <p>From version 1.3, HDR clips are converted to standard range (SDR) on your iPhone when you import them. The converted copy is stored in the project; your source video is only read. Tighten for speaking also runs on your device with Take Studio's own rules; your script is not sent anywhere for it. A small counter of free Tighten uses is kept in the app's preferences on the device.</p>
+
+      <h2>Install history check (version 1.3 and later)</h2>
+      <p>From version 1.3, Take Studio decides whether exports end with a short &ldquo;Made with Take Studio&rdquo; card. The card applies only if your first install is version 1.3 or later and you use the free plan. To tell, the app asks Apple's StoreKit for this app's verified App Store record on your device. It reads the original app version (build) and original download date, the store environment and type, any revocation date, the date Apple signed the record and Apple's record ID. Apple's StoreKit may contact the App Store to supply it, as it does for purchases.</p>
+      <p>Take Studio keeps the result on the device in the iPhone Keychain, and the date it first ran on this iPhone both in the app's preferences and in the Keychain. Keychain items are marked for this device only (they do not sync). The Keychain copy can remain after you delete the app, so a reinstall on the same iPhone is recognized as the same install. Take Studio also checks once, on the first launch of version 1.3, whether this iPhone already holds Take Studio projects or settings from an earlier version. None of this is sent to MubarakLab or to anyone else, and it is not used for tracking or advertising. If the record cannot be read, no card is added.</p>
+
+      <h2>Optional reminder</h2>
+      <p>After an export, Take Studio may offer one optional reminder to record your next video. iPhone asks for notification permission only if you tap it. The reminder is one local notification, scheduled on your iPhone for the day you pick, with fixed text (&ldquo;Your next take&rdquo;) that does not include project content. It is not a push notification and needs no server. You can cancel it in Take Studio Settings or in iPhone Settings.</p>
+
+      <h2>Recording Live Activity</h2>
+      <p>While a take records, Take Studio shows a Live Activity on the Lock Screen and in the Dynamic Island. It can show the project and shot name, the elapsed time, the current and next line of your script (shortened), the line number, a Cut button, and a short note if recording stopped. It is created and updated on your iPhone only, without push updates, and ends shortly after recording stops. iOS may show it on a paired Apple Watch. Because it appears on the Lock Screen, someone looking at your locked iPhone can read those lines. Turn Live Activities off in iPhone Settings → Take Studio.</p>
+
+      <h2>Spotlight search</h2>
+      <p>From version 1.3, Take Studio adds each project that is not in Trash to iPhone's on-device Spotlight index, so Search, Siri and Shortcuts can find and open it. The index holds the project title and simple counts such as shots and words, and whether it is archived. Script text is not indexed. The index is kept by iOS under your Siri &amp; Search settings, where you can turn it off for Take Studio. MubarakLab does not receive it.</p>
+
       <h2>Sharing and editable backups</h2>
       <p>You choose where to save or share finished videos and project backups. Your chosen Photos, Files, cloud-storage or sharing provider controls its copy under its own policies. New rendered exports do not copy source location metadata, but a video may still reveal information visible or audible in its content.</p>
       <p>A <code>.takestudio</code> backup contains the editable project and owned originals, including metadata retained in original files. The archive itself is <strong>not encrypted or password-protected</strong>. Choose its destination and recipients carefully. Finished exported videos are saved separately from project backups.</p>
@@ -39,7 +55,7 @@
 
       <h2>Retention, deletion and your choices</h2>
       <p>Projects and takes in Trash retain their originals until you permanently delete them. Archiving organizes a project and does not remove its media. Clearing cache removes regenerable data, not originals. Use the app's storage and deletion controls to manage local work.</p>
-      <p>Deleting the app removes its local work unless you have a separate recoverable backup. Deletion in Take Studio cannot erase copies already saved to Photos, Files, device backups or other destinations. Manage those copies separately. Removing the app does not cancel an Apple subscription. We cannot restore a project from a Take Studio server because there is no server-side project copy.</p>
+      <p>Deleting the app removes its local work unless you have a separate recoverable backup; the device-only Keychain items described above can remain. Deletion in Take Studio cannot erase copies already saved to Photos, Files, device backups or other destinations. Manage those copies separately. Removing the app does not cancel an Apple subscription. We cannot restore a project from a Take Studio server because there is no server-side project copy.</p>
 
       <h2>Support messages and this website</h2>
       <p>If you email support, we receive your email address, message and any attachments you choose to send through our email provider. We use them to respond to your request. Please avoid sending private footage, full project backups, passwords or payment details. Contact us to request access to or deletion of support correspondence; records may need to be retained where required by law.</p>
