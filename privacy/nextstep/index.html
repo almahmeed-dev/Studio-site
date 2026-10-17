@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="How NextStep by MubarakLab handles local routines, paired-device sync, exports, purchases and support messages.">
+  <meta name="description" content="How NextStep by MubarakLab handles local routines, paired-device sync, on-device step suggestions, install history, Spotlight, App Store cards, exports, purchases and support messages.">
   <meta name="color-scheme" content="light dark">
   <title>NextStep — Privacy Policy</title>
   <link rel="canonical" href="https://mubaraklabs.com/privacy/nextstep/">
@@ -13,7 +13,7 @@
   <main class="wrap">
     <header>
       <h1>NextStep — Privacy Policy</h1>
-      <p class="updated">Last updated: September 10, 2026</p>
+      <p class="updated">Last updated: October 17, 2026</p>
     </header>
     <section>
       <p>NextStep is developed by MubarakLab. This policy covers the NextStep app and these app information pages. NextStep has no custom account or production app server. MubarakLab does not automatically receive your routine or history content through a NextStep server.</p>
@@ -25,10 +25,25 @@
       <h2>iPhone and Apple Watch sync</h2>
       <p>When NextStep is installed on paired devices, Apple's WatchConnectivity framework exchanges saved routines, real session snapshots, history and synchronization metadata between them. Transfer may be delayed while a device is disconnected. Independently started sessions remain separate, with one device controlling each session.</p>
       <p>NextStep does not provide an app-managed cloud account or iCloud routine-sync service. Device backups and other system services may handle app data according to your Apple settings and <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.</p>
+      <p>From version 1.1, the iPhone also sends the paired Apple Watch, over the same WatchConnectivity link, a small status record: whether this is an earlier or a newer install (see the install history check below), whether NextStep Pro is active on the iPhone, and when the record was sent. The Watch uses it only to show or unlock the NextStep Watch complication. It goes nowhere else.</p>
 
       <h2>Notifications, widgets and system features</h2>
       <p>Optional local notifications use routine reminders and current-session timing. Widgets and Live Activities use limited status snapshots on the device. Names are private by default on these surfaces; turning off Keep step names private allows routine or step names to appear. Check your lock-screen and notification-preview settings before revealing personal text.</p>
       <p>If you use Siri or Shortcuts to open a saved routine, Apple processes that interaction under its own settings and policies. Routine names can appear in system routine-selection or Shortcuts interfaces even when notification names are private. The app does not request access to HealthKit, Calendar, location or the microphone. System text input and Siri are provided by the operating system.</p>
+
+      <h2>Breaking a task into steps (version 1.1 and later)</h2>
+      <p>From version 1.1, Break a task into steps turns a task you type into a list of steps for you to review. NextStep first uses its own rules on your iPhone: a list you typed is kept as you wrote it, and common tasks get steps from templates built into the app. Only for a task those rules do not cover, and only where Apple Intelligence is available, turned on and supports your language, NextStep asks Apple's on-device language model to suggest steps. If it is not available, fails or takes too long, NextStep's own steps are shown instead. Suggestions are checked on the iPhone before you see them.</p>
+      <p>The task you type and the suggested steps are handled on your iPhone only. They are not sent to MubarakLab, to a server or to any outside AI service, and they are not saved unless you choose to add the steps to a routine, which is then stored like any other routine. A small counter of your free uses is kept in the app's preferences on the device.</p>
+
+      <h2>Spotlight search (version 1.1 and later)</h2>
+      <p>From version 1.1, when Keep step names private is turned off, NextStep adds your saved routines (up to 200) to iPhone's on-device Spotlight index, so Search, Siri and Shortcuts can find and open them. Each entry holds the routine name, its number of steps and its total planned time. Step names and notes are not indexed. While Keep step names private is on, which is the default, NextStep indexes nothing and removes entries it added earlier. The index is kept by iOS under your Siri &amp; Search settings, where you can turn it off for NextStep. MubarakLab does not receive it.</p>
+
+      <h2>Install history check (version 1.1 and later)</h2>
+      <p>From version 1.1, NextStep decides whether Watch complications are free or part of NextStep Pro. They are part of Pro only if your first install of NextStep is version 1.1 or later; people who used an earlier version keep them free. To tell, the app asks Apple's StoreKit for this app's verified App Store record on your device. It reads the original app version (build) and original download date, the store environment and type, any revocation date, the date Apple signed the record and Apple's record ID. Apple's StoreKit may contact the App Store to supply it, as it does for purchases.</p>
+      <p>NextStep keeps the result on the device in the iPhone Keychain, and the date it first ran on this iPhone both in the app's preferences and in the Keychain. Keychain items are marked for this device only (they do not sync). The Keychain copy can remain after you delete the app, so a reinstall on the same iPhone is recognized as the same install. NextStep also checks once, on the first launch of version 1.1, whether this iPhone already holds NextStep routines, history or settings from an earlier version. None of this is sent to MubarakLab or to anyone else, and it is not used for tracking or advertising. If the record cannot be read or no date can be confirmed, Watch complications stay free.</p>
+
+      <h2>App Store cards and ratings (version 1.1 and later)</h2>
+      <p>From version 1.1, Settings lists other apps by MubarakLab. Nothing opens unless you tap a row; the App Store then shows that app in a card or its product page. NextStep adds no tracking or campaign token to that link, and what the App Store does in the card falls under Apple's own privacy policy. NextStep may also ask for a rating with Apple's system review prompt, which iOS controls and which NextStep cannot read, and Settings has a Rate NextStep row that opens the App Store review page when you tap it. To time the prompt, the app keeps a few counters and dates in its preferences on the device. These stay on the device.</p>
 
       <h2>Files you choose to export or import</h2>
       <p>A routine share contains the selected routine. A full data export contains routines and real session history, including notes and recorded times. These are readable .nextstep JSON files. Purchases are not included. You decide where to save or send an export using the system share sheet; the chosen service or recipient then controls its copy.</p>
@@ -42,7 +57,7 @@
 
       <h2>Retention, deletion and your choices</h2>
       <p>Routines and history remain on your devices until you delete them. Archiving a routine keeps its history. A Pro subscription ending does not delete your routines or older history; older records remain exportable even when their full in-app view requires Pro.</p>
-      <p>Settings → Your data → Delete all local data removes local routines, drafts and history and attempts to remove app-owned export and recovery files. App preferences, purchase information held by Apple, and synchronization identifiers or deletion records may remain. End a locally running routine before deleting local data.</p>
+      <p>Settings → Your data → Delete all local data removes local routines, drafts and history and attempts to remove app-owned export and recovery files. App preferences, purchase information held by Apple, and synchronization identifiers or deletion records may remain. From version 1.1, the device-only Keychain items described under the install history check can also remain. End a locally running routine before deleting local data.</p>
       <p>An offline paired device keeps its copy until it receives the deletion; independently active work on the other device is preserved. Copies you saved outside the app, shared with others, or kept in device backups must be managed separately. Deleting data or removing the app does not cancel an Apple subscription.</p>
       <p>We cannot retrieve or erase a routine from a NextStep server because there is no such server-side copy. Use the app's export and deletion controls on your devices, or contact us for help.</p>
 
