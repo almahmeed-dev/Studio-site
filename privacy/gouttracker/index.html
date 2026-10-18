@@ -10,32 +10,33 @@
 </head>
 <body>
   <main class="wrap">
-    <header><h1>GoutTracker — Privacy Policy</h1><p class="updated">Last updated: September 8, 2026</p></header>
+    <header><h1>GoutTracker — Privacy Policy</h1><p class="updated">Last updated: October 18, 2026</p></header>
     <section>
       <p>GoutTracker is developed by MubarakLab. It requires no MubarakLab account, contains no advertising, and does not track you across other companies' apps or websites.</p>
 
       <h2>Health diary stored on your device</h2>
-      <p>Food records, portions, meal times, water volumes, uric-acid readings, symptom episodes, notes, targets, and preferences are stored locally on your device. MubarakLab does not automatically receive this diary.</p>
-      <p>The home-screen widget receives only a bounded same-day summary through an Apple App Group. Individual foods, lab values, symptom details, and notes are not placed in the widget snapshot.</p>
+      <p>Food records, portions, meal times, water volumes, uric-acid readings, symptom episodes, notes, targets, the optional daily purine reference line, and preferences are stored locally on your device. MubarakLab does not automatically receive this diary.</p>
+      <p>The widgets read a bounded same-day summary through an Apple App Group on your device: recorded purine, your reference line if you chose one, water, fructose, and the number of drinks logged. Individual foods, lab values, symptom details, and notes are not placed in that summary. The Log Food and Log Water shortcuts write to the same on-device diary.</p>
+      <p>From version 1.8, the app also keeps on your device, in app storage and the iOS Keychain, the date it was first installed and whether an earlier version had been used, plus counters for when it may ask for an App Store rating. These decide whether the one-time Pro screen and the rating request can appear. They are not sent to MubarakLab or anyone else.</p>
 
       <h2>Exports, backups, and deletion</h2>
       <p>You can deliberately create a PDF report or JSON backup. iOS then lets you choose whether and where to send or save it. The selected app or service handles that copy under its own terms. GoutTracker provides an in-app full erase for local diary data, preferences, widget summary, and temporary reports. App Store purchase records remain managed by Apple.</p>
       <p>Deleting the app removes its local data unless your device or operating-system backup restores it. GoutTracker does not currently operate app-managed cloud synchronization for health history.</p>
 
-      <h2>Optional product analytics</h2>
-      <p>When “Share anonymous product usage” is enabled, GoutTracker uses TelemetryDeck and may use a configured MubarakLab HTTPS endpoint for coarse events such as app session, onboarding step, feature or paywall view, offering result, and report creation or share intent. These events do not include food names, nutrient bands, lab values, joints, symptoms, medication details, or notes, and they do not include a persistent GoutTracker account identifier. You can disable this in Settings; the app stops new product events and clears its local pending queue.</p>
+      <h2>Usage analytics (version 1.7 and earlier)</h2>
+      <p>Version 1.8 and later contain no analytics and send nothing about how you use the app. Up to version 1.7, while "Share anonymous product usage" was switched on (the default), the app sent coarse usage events to TelemetryDeck, such as app sessions, onboarding steps, screen and paywall views, purchase-flow results, report creation, and how many foods, readings, or episodes were logged, together with a hashed installation identifier. These events did not include food names, nutrient amounts, lab values, joints, symptoms, medication details, or notes, and were not linked to your identity or used for tracking. Updating the app stops new events; it does not erase what TelemetryDeck already received.</p>
 
       <h2>Purchases</h2>
-      <p>Apple processes subscriptions. RevenueCat receives anonymous store product, purchase, entitlement, and restore information needed to show plans and unlock Pro. GoutTracker does not receive payment-card information or Apple Account credentials and does not enable RevenueCat's AdServices attribution-token collection. Apple's handling is governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
+      <p>Apple processes subscription payments. Version 1.8 and later check your Pro subscription only with Apple's StoreKit on your device, so MubarakLab receives no purchase records. Up to version 1.7, RevenueCat also received anonymous store product, purchase, entitlement, and restore information needed to show plans and unlock Pro; GoutTracker did not enable RevenueCat's AdServices attribution-token collection. MubarakLab never receives payment-card information or Apple Account credentials. Apple's handling is governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
 
-      <h2>Retention and security</h2>
-      <p>Local diary data remains until you edit, erase, or delete it, subject to device backups. Temporary reports are kept only to support preview and sharing and older temporary reports are cleaned up by the app. No storage or transmission method can be guaranteed perfectly secure; protect exported files according to their sensitivity.</p>
+      <h2>Retention, security, and sharing</h2>
+      <p>Local diary data remains until you edit, erase, or delete it, subject to device backups. Temporary reports are kept only to support preview and sharing, and the app cleans up older ones. Apple, email providers and, for version 1.7 and earlier, TelemetryDeck and RevenueCat keep data they received under their own policies. MubarakLab does not sell personal information. No storage or transmission method can be guaranteed perfectly secure; protect exported files according to their sensitivity.</p>
 
       <h2>Contact and corrections</h2>
       <p>Email <a href="mailto:almahmeed.dev@gmail.com?subject=GoutTracker%20Privacy">almahmeed.dev@gmail.com</a>. You can report a food issue without sending your diary; the app includes the dataset version in the suggested subject only.</p>
 
-      <h2>Changes</h2>
-      <p>Material changes will be posted here with a revised date.</p>
+      <h2>Children and changes</h2>
+      <p>GoutTracker is not directed to children under 13, and MubarakLab does not knowingly collect personal information from children under 13. Material changes will be posted here with a revised date.</p>
     </section>
     <footer><p><a href="../../gouttracker/">GoutTracker</a> &middot; <a href="../../support/gouttracker/">Support</a> &middot; <a href="../../terms/gouttracker/">Terms</a></p><p>&copy; 2026 MubarakLab</p></footer>
   </main>
