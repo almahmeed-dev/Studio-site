@@ -398,3 +398,42 @@ footer p {
   font-size: 0.9rem;
   opacity: 0.8;
 }
+
+/* ZC-WEB: product-page facts, FAQ, comparison and changelog */
+.facts,
+.compare,
+.changelog {
+  margin: 1rem 0;
+}
+
+.facts dt,
+.compare dt,
+.changelog dt {
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+.facts dd,
+.compare dd,
+.changelog dd {
+  margin: 0.15rem 0 0;
+}
+
+.changelog dt span {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.faq details {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.6rem 0;
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faq details p {
+  margin: 0.5rem 0 0.25rem;
+}

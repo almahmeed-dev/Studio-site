@@ -1,0 +1,34 @@
+# MubarakLab
+
+> MubarakLab is a one-person app studio in Bahrain run by Mubarak Almahmeed. It makes focused iPhone, iPad and Apple Watch apps that keep your data on your device: no accounts, no advertising and no third-party analytics. Every app listed here is published on the App Store under the seller name "Mubarak Almahmeed".
+
+Facts below match the live App Store listings as of 28 October 2026. Prices are set per region by Apple and shown before purchase. None of these apps gives medical, diet or financial advice.
+
+## Focus apps
+
+- [InkCut: Image to SVG & Stencil](https://mubaraklabs.com/inkcut/): iPhone (iOS 26+). Turns a photo, scan or finger sketch into a clean SVG of filled outlines at a real size in millimeters or inches. Edit nodes, find loose stencil islands and add bridges, export SVG, an actual-size tiled PDF or a PNG preview. Traces filled regions only (no centerline paths); makes files and does not drive cutting machines. Free download with the first three SVG/PDF exports included; InkCut Pro is a one-time purchase, with a free 7-Day Pro Trial. Version 1.2.1. App Privacy: Data Not Collected. App Store ID 6819163438. Not affiliated with other software or apps with a similar name.
+- [Gout Diet & Uric Acid Tracker (GoutTracker)](https://mubaraklabs.com/gouttracker/): iPhone (iOS 17+), English and Arabic. A personal diary: estimated purine per 100 g for common foods (35 with published measured values, the rest labeled estimates), daily purine, fructose, alcohol and water totals, uric acid results in mg/dL or µmol/L, and flare notes. Logging is free; an optional monthly or yearly Pro subscription adds a uric acid chart, flare-pattern insights and a PDF report. Does not diagnose or give medical advice. Version 1.8. App Privacy: Data Not Collected. App Store ID 6780350856.
+- [NextStep: Visual Routine Timer](https://mubaraklabs.com/nextstep/): iPhone (iOS 17+) and Apple Watch (watchOS 10+). Routines as a run of timed steps with a finish-by time in view; a step waits for you to tap Done. Standalone Apple Watch app, widgets, Live Activity, Control Center control, Siri and Shortcuts. Break a task into steps uses NextStep's own templates and, where available, Apple's on-device model. Two saved routines free; NextStep Pro is monthly, annual or lifetime. Version 1.1. App Privacy: Data Not Collected. App Store ID 6810808264.
+- [Subscription Tracker: SubSense](https://mubaraklabs.com/subsense/): iPhone and iPad (iOS 17+). A manual subscription and recurring-bill list with estimated yearly and monthly totals per currency and reminders 1 to 14 days before each renewal or trial conversion. No bank login or card linking; it cannot cancel subscriptions. Free for up to 5 plans (7 for users from before 5.4) with iCloud sync, widgets and Siri; SubSense Premium (monthly, yearly or lifetime) removes the cap and adds charts and CSV/JSON export. Version 5.4.1. App Privacy: Data Not Collected. App Store ID 6741325579. Support: https://almahmeed-dev.github.io/SubSense-support-page/
+- [Take Studio: Teleprompter App](https://mubaraklabs.com/takestudio/): iPhone (iOS 26+). Teleprompter, take library and caption editor in one project: write a script, record with the prompter (never visible in the footage), compare takes, edit, add on-device or typed captions and export 9:16, 1:1 or 16:9 1080p MP4 up to five minutes. One active project free; Take Studio Pro is monthly or yearly (the yearly plan has a free 1-week trial for eligible new subscribers). Version 1.3.1. App Privacy: Data Not Collected. App Store ID 6813224231.
+
+## Other apps on the App Store
+
+- [Keto Meal Planner: Diet Plan](https://mubaraklabs.com/ketomealplanner/): low-carb weeks with offline recipes, flexible meal plans and a combined shopping list.
+- [FODMAP Reintro: Gut Planner](https://mubaraklabs.com/fodmapreintro/): a food-challenge planner with local records and reports to review with a dietitian.
+- [CutBench](https://mubaraklabs.com/cutbench/): turns a part list and measured sheet material into checked cutting plans on iPhone.
+- [ProofBook](https://mubaraklabs.com/proofbook/): offline job photos, checklists and PDF reports for independent renovation contractors.
+- [Replay Notebook](https://mubaraklabs.com/replaynotebook/): a personal tennis practice journal with clips, comparisons and notes.
+- [Listing Studio: Seller Photos](https://mubaraklabs.com/listingstudio/): prepare clothing photos and factual details for resale listings.
+- [Memory Magazine](https://mubaraklabs.com/memorymagazine/): turn a weekend's photos and words into a mini magazine.
+- [Hearthwild](https://mubaraklabs.com/hearthwild/): a tactical world-restoration game.
+- [PocketQuest](https://mubaraklabs.com/pocketquest/): a quiet Apple Watch adventure with 48 illustrated encounters.
+- GlyphSweeper: Rogue Puzzle: a logic puzzle dungeon ([support](https://mubaraklabs.com/support/glyphsweeper/)).
+- RoomFit: Plan Before You Buy: room layouts, style and budgets before buying furniture ([support](https://mubaraklabs.com/support/roomfit/)).
+
+## Policies and contact
+
+- Privacy policies: https://mubaraklabs.com/privacy/<app>/ (SubSense: https://almahmeed-dev.github.io/SubSense-support-page/privacy.html)
+- Support pages: https://mubaraklabs.com/support/<app>/
+- Sitemap: https://mubaraklabs.com/sitemap.xml
+- Contact: almahmeed.dev@gmail.com

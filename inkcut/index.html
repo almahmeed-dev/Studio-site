@@ -5,21 +5,152 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <meta name="description" content="Turn a photo, scan or finger sketch into editable outlines, review stencil bridges and export physically sized designs on iPhone.">
-<title>InkCut — Sketch to Stencil</title>
+<title>InkCut: Image to SVG &amp; Stencil for iPhone</title>
   <meta name="apple-itunes-app" content="app-id=6819163438">
   <link rel="canonical" href="https://mubaraklabs.com/inkcut/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MubarakLab">
-  <meta property="og:title" content="InkCut — Sketch to Stencil">
+  <meta property="og:title" content="InkCut: Image to SVG &amp; Stencil for iPhone">
   <meta property="og:description" content="Turn a photo, scan or finger sketch into editable outlines, review stencil bridges and export physically sized designs on iPhone.">
   <meta property="og:url" content="https://mubaraklabs.com/inkcut/">
   <meta property="og:image" content="https://mubaraklabs.com/inkcut/assets/editable-outlines.webp">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="InkCut — Sketch to Stencil">
+  <meta name="twitter:title" content="InkCut: Image to SVG &amp; Stencil for iPhone">
   <meta name="twitter:description" content="Turn a photo, scan or finger sketch into editable outlines, review stencil bridges and export physically sized designs on iPhone.">
   <meta name="twitter:image" content="https://mubaraklabs.com/inkcut/assets/editable-outlines.webp">
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../inkcut.css">
+  <!-- ZC-WEB:ld -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "InkCut: Image to SVG & Stencil",
+  "url": "https://mubaraklabs.com/inkcut/",
+  "description": "InkCut turns a photo, scan or finger sketch into a clean SVG of filled outlines, sized in real millimeters or inches, on iPhone. Edit nodes, bridge stencil islands and export SVG, actual-size PDF or a PNG preview. Free to download with an optional one-time InkCut Pro purchase.",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "iOS 26 or later (iPhone)",
+  "softwareVersion": "1.2.1",
+  "dateModified": "2026-10-21",
+  "inLanguage": [
+    "en"
+  ],
+  "downloadUrl": "https://apps.apple.com/app/id6819163438",
+  "installUrl": "https://apps.apple.com/app/id6819163438",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Free download; optional in-app purchases"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Mubarak Almahmeed"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MubarakLab",
+    "url": "https://mubaraklabs.com/"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does InkCut do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "InkCut vectorizes a photo, a scan or a finger sketch into a clean SVG of filled outlines, sized in real millimeters or inches. You can tune the trace, edit any node, check that a stencil holds together as one piece and export the result, all on your iPhone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is InkCut free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, it is free to download. Capture, cleanup, tracing in up to two colors, path editing and stencil bridges are all included, and so are your first three SVG or PDF exports. PNG previews carry a small InkCut mark. InkCut Pro is a single one-time purchase, not a subscription. It removes the export limit and the preview mark, and opens color separation beyond two layers (up to six)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I try InkCut Pro before buying it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The 7-Day Pro Trial is a free in-app item: it never charges, does not renew and cannot be restarted. When it ends, Pro features lock again unless you buy InkCut Pro, and your projects stay editable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I bought InkCut when it was a paid download. Do I have to pay again?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. If you bought InkCut before version 1.2, InkCut Pro is already unlocked for you. After a reinstall or on another device, open Settings, then InkCut Pro, then Restore Purchases while signed in with the same Apple Account."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which files can InkCut export?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An SVG made of plain filled paths with its physical width and height written in (all visible layers together, or one SVG per layer). A PDF at actual size, tiled across A4 or Letter with assembly marks and a 100 mm calibration bar, or fitted to one page. A PNG preview. And a portable .inkcut project backup that stays fully editable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the SVG open in my cutting machine's software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "InkCut writes standard SVG with its physical size included, and most design and cutting software can import SVG. Import settings differ between programs, so check the size after importing and cut a small test piece first. InkCut makes files only; it does not connect to or drive any cutting machine."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can InkCut make single-line (centerline) paths or editable text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. InkCut traces the boundaries of filled shapes. It does not create single-line centerline paths for pens or engraving, and it does not rebuild editable lettering."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a stencil bridge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A thin strip of material that keeps a loose island, such as the center of an O, attached to the rest of the stencil. InkCut finds loose islands, adds bridges at the width you choose and rechecks every connection. A connected stencil is a geometry check, not a promise about the strength of your material."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which pictures can I start from?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A photo of a paper drawing, a saved JPEG, PNG or HEIC picture from Photos or Files, or a sketch drawn with your finger. You can crop, straighten, correct perspective, adjust threshold and contrast, clear specks and erase background areas before tracing. Since version 1.2.1, camera photos trace with automatic photo settings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an account or an internet connection?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No account is needed, and tracing, editing and exporting run on your iPhone. Purchases go through Apple."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this InkCut related to other software or apps with a similar name?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This page describes the iPhone app InkCut: Image to SVG & Stencil by Mubarak Almahmeed (App Store ID 6819163438). It is not affiliated with other software or apps that use a similar name."
+      }
+    }
+  ]
+}
+  </script>
+  <!-- /ZC-WEB:ld -->
 </head>
 <body>
 <main class="wrap">
@@ -79,6 +210,97 @@
 <a href="../support/inkcut/">Read the guide and support</a>
 </p>
 </section>
+    <!-- ZC-WEB:sections -->
+    <section class="zc-facts" aria-labelledby="inkcut-facts">
+      <h2 id="inkcut-facts">At a glance</h2>
+      <dl class="facts">
+        <dt>Price</dt><dd>Free to download. InkCut Pro is an optional one-time in-app purchase; a free 7-Day Pro Trial is available.</dd>
+        <dt>Requires</dt><dd>iPhone with iOS 26 or later</dd>
+        <dt>Language</dt><dd>English</dd>
+        <dt>Current version</dt><dd>1.2.1 (21 October 2026)</dd>
+        <dt>App Privacy label</dt><dd>Data Not Collected</dd>
+        <dt>Developer</dt><dd>Mubarak Almahmeed (MubarakLab), Bahrain</dd>
+        <dt>App Store</dt><dd><a href="https://apps.apple.com/app/id6819163438?pt=127572059&amp;ct=site-inkcut-facts&amp;mt=8">InkCut: Image to SVG &amp; Stencil</a> (ID 6819163438)</dd>
+      </dl>
+    </section>
+    <section class="faq" aria-labelledby="inkcut-faq">
+      <h2 id="inkcut-faq">Questions before your first cut</h2>
+      <details>
+        <summary>What does InkCut do?</summary>
+        <p>InkCut vectorizes a photo, a scan or a finger sketch into a clean SVG of filled outlines, sized in real millimeters or inches. You can tune the trace, edit any node, check that a stencil holds together as one piece and export the result, all on your iPhone.</p>
+      </details>
+      <details>
+        <summary>Is InkCut free?</summary>
+        <p>Yes, it is free to download. Capture, cleanup, tracing in up to two colors, path editing and stencil bridges are all included, and so are your first three SVG or PDF exports. PNG previews carry a small InkCut mark. InkCut Pro is a single one-time purchase, not a subscription. It removes the export limit and the preview mark, and opens color separation beyond two layers (up to six).</p>
+      </details>
+      <details>
+        <summary>Can I try InkCut Pro before buying it?</summary>
+        <p>Yes. The 7-Day Pro Trial is a free in-app item: it never charges, does not renew and cannot be restarted. When it ends, Pro features lock again unless you buy InkCut Pro, and your projects stay editable.</p>
+      </details>
+      <details>
+        <summary>I bought InkCut when it was a paid download. Do I have to pay again?</summary>
+        <p>No. If you bought InkCut before version 1.2, InkCut Pro is already unlocked for you. After a reinstall or on another device, open Settings, then InkCut Pro, then Restore Purchases while signed in with the same Apple Account.</p>
+      </details>
+      <details>
+        <summary>Which files can InkCut export?</summary>
+        <p>An SVG made of plain filled paths with its physical width and height written in (all visible layers together, or one SVG per layer). A PDF at actual size, tiled across A4 or Letter with assembly marks and a 100 mm calibration bar, or fitted to one page. A PNG preview. And a portable .inkcut project backup that stays fully editable.</p>
+      </details>
+      <details>
+        <summary>Will the SVG open in my cutting machine's software?</summary>
+        <p>InkCut writes standard SVG with its physical size included, and most design and cutting software can import SVG. Import settings differ between programs, so check the size after importing and cut a small test piece first. InkCut makes files only; it does not connect to or drive any cutting machine.</p>
+      </details>
+      <details>
+        <summary>Can InkCut make single-line (centerline) paths or editable text?</summary>
+        <p>No. InkCut traces the boundaries of filled shapes. It does not create single-line centerline paths for pens or engraving, and it does not rebuild editable lettering.</p>
+      </details>
+      <details>
+        <summary>What is a stencil bridge?</summary>
+        <p>A thin strip of material that keeps a loose island, such as the center of an O, attached to the rest of the stencil. InkCut finds loose islands, adds bridges at the width you choose and rechecks every connection. A connected stencil is a geometry check, not a promise about the strength of your material.</p>
+      </details>
+      <details>
+        <summary>Which pictures can I start from?</summary>
+        <p>A photo of a paper drawing, a saved JPEG, PNG or HEIC picture from Photos or Files, or a sketch drawn with your finger. You can crop, straighten, correct perspective, adjust threshold and contrast, clear specks and erase background areas before tracing. Since version 1.2.1, camera photos trace with automatic photo settings.</p>
+      </details>
+      <details>
+        <summary>Do I need an account or an internet connection?</summary>
+        <p>No account is needed, and tracing, editing and exporting run on your iPhone. Purchases go through Apple.</p>
+      </details>
+      <details>
+        <summary>Is this InkCut related to other software or apps with a similar name?</summary>
+        <p>No. This page describes the iPhone app InkCut: Image to SVG &amp; Stencil by Mubarak Almahmeed (App Store ID 6819163438). It is not affiliated with other software or apps that use a similar name.</p>
+      </details>
+    </section>
+    <section aria-labelledby="inkcut-compare">
+      <h2 id="inkcut-compare">Where InkCut fits</h2>
+      <p>InkCut does one job: picture in, sized cut file out, on a phone. Here is how that compares with the usual alternatives. Pick the tool that matches your work.</p>
+      <dl class="compare">
+        <dt>Desktop vector editors with an image-trace feature</dt><dd>They offer far more drawing and layout tools, but you need a computer. InkCut stays on your iPhone and adds a physical size and a stencil connectivity check to the trace.</dd>
+        <dt>Online image-to-SVG converters</dt><dd>They are quick for a one-off file, and many process your picture on a server. InkCut traces on your device, lets you edit the nodes afterwards and writes the real-world size into the file.</dd>
+        <dt>The design app that comes with a cutting machine</dt><dd>It is usually the place to arrange and send a job to that machine. InkCut does not drive a machine. It prepares an SVG or PDF that you then import there.</dd>
+        <dt>Centerline or single-line tracing tools</dt><dd>If you need one-stroke paths for a pen plotter or engraving, use one of these. InkCut traces filled regions only.</dd>
+      </dl>
+      <p class="status-note">Categories are described in general terms; features of other products vary, so check them for yourself.</p>
+    </section>
+    <section aria-labelledby="inkcut-changes">
+      <h2 id="inkcut-changes">What changed</h2>
+      <dl class="changelog">
+        <dt>1.2.1 <span>· 21 October 2026</span></dt><dd>Fixes for your first cut file: camera photos trace in seconds with automatic photo settings; pictures keep their shape (a round logo stays round); new traces come out as clean outlines with much smaller SVG files; size is set inside SVG export; shared files use your project's name; Settings → See InkCut Pro opens again; simpler first steps.</dd>
+        <dt>1.2 <span>· 13 October 2026</span></dt><dd>InkCut became free to download, with InkCut Pro as an optional one-time purchase and a free 7-Day Pro Trial. Earlier buyers keep Pro. A guided first project traces a sample drawing.</dd>
+        <dt>1.1 <span>· October 2026</span></dt><dd>Three-pane layout on iPhone Duo: original drawing, vector canvas and tool inspector side by side.</dd>
+        <dt>1.0 <span>· 6 October 2026</span></dt><dd>First release.</dd>
+      </dl>
+    </section>
+    <section aria-labelledby="inkcut-privacy">
+      <h2 id="inkcut-privacy">What stays on your iPhone</h2>
+      <ul>
+        <li>App Store privacy label: <strong>Data Not Collected</strong>.</li>
+        <li>No account, no advertising and no analytics SDK. The app has no network code of its own.</li>
+        <li>Projects and source artwork are stored on your device. You choose where exports and .inkcut backups go; Files providers, receiving apps and device backups follow their own policies.</li>
+        <li>Apple processes in-app purchases. InkCut checks your Pro status on the device with StoreKit and never receives payment details.</li>
+      </ul>
+      <p><a href="../privacy/inkcut/">Read the full privacy policy</a></p>
+    </section>
+    <!-- /ZC-WEB:sections -->
 <footer>
 <p>
 <a href="../inkcut/">InkCut</a> · <a href="../support/inkcut/">Support</a> · <a href="../privacy/inkcut/">Privacy</a> · <a href="../terms/inkcut/">Terms</a>
