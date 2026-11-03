@@ -16,7 +16,7 @@ Facts below match the live App Store listings as of 28 October 2026. Prices are 
 
 - [Keto Meal Planner: Diet Plan](https://mubaraklabs.com/ketomealplanner/): low-carb weeks with offline recipes, flexible meal plans and a combined shopping list.
 - [FODMAP Reintro: Gut Planner](https://mubaraklabs.com/fodmapreintro/): a food-challenge planner with local records and reports to review with a dietitian.
-- [CutBench](https://mubaraklabs.com/cutbench/): turns a part list and measured sheet material into checked cutting plans on iPhone.
+- [Kerfwise: Cut List Calculator (formerly CutBench)](https://mubaraklabs.com/kerfwise/): turns a part list and measured sheet material into checked cutting plans on iPhone.
 - [ProofBook](https://mubaraklabs.com/proofbook/): offline job photos, checklists and PDF reports for independent renovation contractors.
 - [Replay Notebook](https://mubaraklabs.com/replaynotebook/): a personal tennis practice journal with clips, comparisons and notes.
 - [Listing Studio: Seller Photos](https://mubaraklabs.com/listingstudio/): prepare clothing photos and factual details for resale listings.

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://mubaraklabs.com/</loc></url>
-  <url><loc>https://mubaraklabs.com/cutbench/</loc></url>
   <url><loc>https://mubaraklabs.com/fodmapreintro/</loc></url>
   <url><loc>https://mubaraklabs.com/gouttracker/</loc><lastmod>2026-10-28</lastmod></url>
   <url><loc>https://mubaraklabs.com/hearthwild/</loc></url>
+  <url><loc>https://mubaraklabs.com/kerfwise/</loc><lastmod>2026-11-03</lastmod></url>
   <url><loc>https://mubaraklabs.com/ketomealplanner/</loc></url>
   <url><loc>https://mubaraklabs.com/listingstudio/</loc></url>
   <url><loc>https://mubaraklabs.com/listingstudio/editorial/</loc></url>
@@ -23,6 +23,7 @@
   <url><loc>https://mubaraklabs.com/privacy/gouttracker/</loc></url>
   <url><loc>https://mubaraklabs.com/privacy/hearthwild/</loc></url>
   <url><loc>https://mubaraklabs.com/privacy/inkcut/</loc></url>
+  <url><loc>https://mubaraklabs.com/privacy/kerfwise/</loc></url>
   <url><loc>https://mubaraklabs.com/privacy/ketomealplanner/</loc></url>
   <url><loc>https://mubaraklabs.com/privacy/listingstudio/</loc></url>
   <url><loc>https://mubaraklabs.com/privacy/memorymagazine/</loc></url>
@@ -42,6 +43,7 @@
   <url><loc>https://mubaraklabs.com/support/gouttracker/</loc></url>
   <url><loc>https://mubaraklabs.com/support/hearthwild/</loc></url>
   <url><loc>https://mubaraklabs.com/support/inkcut/</loc></url>
+  <url><loc>https://mubaraklabs.com/support/kerfwise/</loc></url>
   <url><loc>https://mubaraklabs.com/support/ketomealplanner/</loc></url>
   <url><loc>https://mubaraklabs.com/support/listingstudio/</loc></url>
   <url><loc>https://mubaraklabs.com/support/memorymagazine/</loc></url>
@@ -60,6 +62,7 @@
   <url><loc>https://mubaraklabs.com/terms/gouttracker/</loc></url>
   <url><loc>https://mubaraklabs.com/terms/hearthwild/</loc></url>
   <url><loc>https://mubaraklabs.com/terms/inkcut/</loc></url>
+  <url><loc>https://mubaraklabs.com/terms/kerfwise/</loc></url>
   <url><loc>https://mubaraklabs.com/terms/ketomealplanner/</loc></url>
   <url><loc>https://mubaraklabs.com/terms/listingstudio/</loc></url>
   <url><loc>https://mubaraklabs.com/terms/memorymagazine/</loc></url>
