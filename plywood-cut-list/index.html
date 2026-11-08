@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Free Plywood Cut List Calculator (4×8 and 5×5 sheets) · MubarakLab</title>
+  <meta name="description" content="Free plywood cut list calculator that runs in your browser. Enter up to 20 parts, set the saw kerf, and get printable sheet layouts for 4×8 or 5×5 sheets with waste % and offcut sizes.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="apple-itunes-app" content="app-id=6818040854">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MubarakLab">
+  <meta property="og:title" content="Free Plywood Cut List Calculator">
+  <meta property="og:description" content="Lay out up to 20 parts on 4×8 or 5×5 plywood sheets with your saw kerf. Runs in your browser; nothing is uploaded.">
+  <meta property="og:url" content="https://mubaraklabs.com/plywood-cut-list/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Free Plywood Cut List Calculator">
+  <meta name="twitter:description" content="Lay out up to 20 parts on 4×8 or 5×5 plywood sheets with your saw kerf. Runs in your browser; nothing is uploaded.">
+  <link rel="canonical" href="https://mubaraklabs.com/plywood-cut-list/">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="cut-list.css">
+  <script src="packer.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body class="cutlist-site">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main" class="wrap cutlist-wrap" tabindex="-1">
+    <header class="no-print">
+      <p><a href="../">MubarakLab</a></p>
+      <h1>Plywood cut list calculator</h1>
+      <p class="tagline">Lay out your parts on full sheets, with the saw kerf counted between every cut.</p>
+      <p>Free, no sign-up. Everything runs in this browser tab: your parts are never uploaded, and the page has no analytics or cookies. Your last inputs are kept in this browser only.</p>
+    </header>
+
+    <form id="cut-form" class="no-print" novalidate aria-describedby="form-status">
+      <fieldset class="cl-fieldset">
+        <legend>Sheet</legend>
+        <div class="cl-grid">
+          <div class="cl-field">
+            <span class="cl-label" id="units-label">Units</span>
+            <div class="cl-segment" role="radiogroup" aria-labelledby="units-label">
+              <label><input type="radio" name="units" value="in" checked> Inches</label>
+              <label><input type="radio" name="units" value="mm"> Millimetres</label>
+            </div>
+          </div>
+          <div class="cl-field">
+            <label class="cl-label" for="sheet-preset">Sheet size</label>
+            <select id="sheet-preset" name="preset">
+              <option value="4x8">4×8 ft plywood (1220 × 2440 mm)</option>
+              <option value="5x5">5×5 Baltic birch (1525 × 1525 mm)</option>
+              <option value="custom">Custom size</option>
+            </select>
+          </div>
+          <div class="cl-field">
+            <label class="cl-label" for="sheet-length">Sheet length <span class="unit-tag"></span></label>
+            <input id="sheet-length" name="sheetLength" type="text" inputmode="decimal" autocomplete="off" spellcheck="false">
+          </div>
+          <div class="cl-field">
+            <label class="cl-label" for="sheet-width">Sheet width <span class="unit-tag"></span></label>
+            <input id="sheet-width" name="sheetWidth" type="text" inputmode="decimal" autocomplete="off" spellcheck="false">
+          </div>
+          <div class="cl-field">
+            <label class="cl-label" for="kerf">Saw kerf (blade width) <span class="unit-tag"></span></label>
+            <input id="kerf" name="kerf" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" aria-describedby="kerf-hint">
+            <p class="cl-hint" id="kerf-hint">Typical: 1/8 in or 3 mm. Use 0 to ignore it.</p>
+          </div>
+          <div class="cl-field cl-check">
+            <label><input id="allow-rotate" name="allowRotate" type="checkbox" checked> Parts may turn 90°</label>
+            <p class="cl-hint">Turn this off to keep every part's length along the sheet length.</p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="cl-fieldset">
+        <legend>Parts <span class="cl-count" id="part-count"></span></legend>
+        <p class="cl-hint" id="parts-hint">Inches accept fractions such as <code>23 1/2</code> or <code>23-1/2</code>. Up to 20 rows.</p>
+        <div class="cl-table-scroll">
+          <table class="cl-parts-input">
+            <caption class="visually-hidden">Parts to cut</caption>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Label</th>
+                <th scope="col">Length <span class="unit-tag"></span></th>
+                <th scope="col">Width <span class="unit-tag"></span></th>
+                <th scope="col">Qty</th>
+                <th scope="col"><span class="visually-hidden">Remove</span></th>
+              </tr>
+            </thead>
+            <tbody id="parts-body"></tbody>
+          </table>
+        </div>
+        <div class="cl-actions">
+          <button type="button" id="add-part" class="cl-btn">Add part</button>
+          <button type="button" id="load-example" class="cl-btn cl-btn-quiet">Load the bookcase example</button>
+          <button type="button" id="clear-parts" class="cl-btn cl-btn-quiet">Clear parts</button>
+        </div>
+      </fieldset>
+
+      <div class="cl-actions">
+        <button type="submit" class="cl-btn cl-btn-primary">Lay out the sheets</button>
+        <button type="button" id="print-btn" class="cl-btn">Print the layout</button>
+      </div>
+      <p id="form-status" class="cl-status" role="status" aria-live="polite"></p>
+    </form>
+
+    <section id="results" aria-labelledby="results-heading" class="cl-results">
+      <h2 id="results-heading">Cutting layout</h2>
+      <p class="print-only" id="print-summary"></p>
+      <div id="oversize" role="alert"></div>
+      <div id="summary" class="cl-summary"></div>
+      <div id="sheets"></div>
+      <h3 id="parts-list-heading">Parts list</h3>
+      <div class="cl-table-scroll">
+        <table class="cl-table" id="parts-list" aria-labelledby="parts-list-heading"></table>
+      </div>
+      <p class="cl-hint">The layout is a quick heuristic, not a guaranteed optimum. Drawings are to scale but are not full-size templates; measure and mark each part on the sheet before you cut.</p>
+      <p class="print-only">Made with the free plywood cut list calculator at mubaraklabs.com/plywood-cut-list/</p>
+    </section>
+
+    <section class="card cl-funnel no-print" aria-labelledby="funnel-heading">
+      <h2 id="funnel-heading">Take the plan to the workshop</h2>
+      <p>Save it, add grain direction, track offcuts and plan several sheets in Kerfwise.</p>
+      <p class="cl-hint">Kerfwise is our cut-plan app for iPhone (iOS 26 or later). It is free to download; offcut tracking through recorded cuts is part of Kerfwise Pro, a one-time purchase with a free 7-day trial.</p>
+      <p><a class="store-badge" href="https://apps.apple.com/app/apple-store/id6818040854?pt=127572059&amp;ct=webtool-kerfwise-202611&amp;mt=8"><span class="store-badge-label"><span class="store-badge-small">Download Kerfwise on the</span><span class="store-badge-big">App Store</span></span></a></p>
+      <p><a href="../kerfwise/">More about Kerfwise →</a></p>
+    </section>
+
+    <section class="faq no-print" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Questions</h2>
+      <details>
+        <summary>Is this the best possible layout?</summary>
+        <p>Not necessarily. This page is a simple cut list optimizer: it tries a few dozen part orders and placement rules, keeps the layout that uses the fewest sheets, and shows it. That is a heuristic, not a guaranteed optimum, so a person or a slower search can sometimes do better.</p>
+      </details>
+      <details>
+        <summary>How is the kerf counted?</summary>
+        <p>Every cut removes one kerf of material. Two neighbouring parts sit at least one kerf apart, and offcut sizes are what remains after that cut. A part that runs exactly to the sheet edge needs no kerf on that side. The page does not trim factory edges, so if your sheet edges are damaged, enter a slightly smaller sheet size.</p>
+      </details>
+      <details>
+        <summary>Can every layout be cut with a table saw or track saw?</summary>
+        <p>The layouts are guillotine layouts: each cut runs straight across the piece it divides, edge to edge. That suits table saws, track saws and panel saws. The page does not give a cut order, so plan your first long cuts before you start.</p>
+      </details>
+      <details>
+        <summary>Does it handle grain direction?</summary>
+        <p>Only in a simple way: turn off “Parts may turn 90°” and every part keeps its length along the sheet length. You cannot set grain part by part here.</p>
+      </details>
+      <details>
+        <summary>Are my parts uploaded or saved anywhere?</summary>
+        <p>No. The layout is calculated by JavaScript in this tab, and the page makes no network requests after it loads. Your last inputs are kept in this browser's local storage so they are there next time; clearing your browser data removes them.</p>
+      </details>
+    </section>
+
+    <footer class="no-print">
+      <nav class="site-nav" aria-label="Footer"><a href="../">MubarakLab</a><a href="../kerfwise/">Kerfwise</a></nav>
+      <p>&copy; 2026 Mubarak Almahmeed &middot; MubarakLab</p>
+    </footer>
+  </main>
+
+  <template id="part-row">
+    <tr>
+      <th scope="row" class="cl-rownum"></th>
+      <td><label class="visually-hidden" data-for="label"></label><input data-field="label" type="text" maxlength="40" autocomplete="off"></td>
+      <td><label class="visually-hidden" data-for="length"></label><input data-field="length" type="text" inputmode="decimal" autocomplete="off" spellcheck="false"></td>
+      <td><label class="visually-hidden" data-for="width"></label><input data-field="width" type="text" inputmode="decimal" autocomplete="off" spellcheck="false"></td>
+      <td><label class="visually-hidden" data-for="qty"></label><input data-field="qty" type="number" min="1" max="50" step="1" inputmode="numeric"></td>
+      <td><button type="button" class="cl-remove" data-action="remove">Remove</button></td>
+    </tr>
+  </template>
+</body>
+</html>

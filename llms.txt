@@ -26,6 +26,11 @@ Facts below match the live App Store listings as of 28 October 2026. Prices are 
 - GlyphSweeper: Rogue Puzzle: a logic puzzle dungeon ([support](https://mubaraklabs.com/support/glyphsweeper/)).
 - RoomFit: Plan Before You Buy: room layouts, style and budgets before buying furniture ([support](https://mubaraklabs.com/support/roomfit/)).
 
+## Free web tools
+
+- [Image to SVG converter](https://mubaraklabs.com/image-to-svg/): traces a picture into a one- or two-colour SVG inside the browser; the image is never uploaded. The full version is the Stencilsmith iPhone app.
+- [Plywood cut list calculator](https://mubaraklabs.com/plywood-cut-list/): lays out up to 20 parts on one sheet size with blade kerf and a print view, in the browser. Kerfwise on iPhone adds grain direction, mixed sheet and board sizes and, with Kerfwise Pro, offcut tracking.
+
 ## Policies and contact
 
 - Privacy policies: https://mubaraklabs.com/privacy/<app>/ (SubSense: https://almahmeed-dev.github.io/SubSense-support-page/privacy.html)

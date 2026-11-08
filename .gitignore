@@ -19,3 +19,7 @@ Signing/
 .env
 Configuration/Local.xcconfig
 release/archives/
+
+# web-tool unit tests (kept locally, not published)
+image-to-svg/test/
+plywood-cut-list/test/

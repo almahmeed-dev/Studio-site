@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; worker-src 'self'; style-src 'self'; img-src 'self' blob: data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<title>Free Image to SVG Converter: No Upload, Runs in Your Browser</title>
+<meta name="description" content="Convert a JPG or PNG to SVG for free, right in your browser. Your image is never uploaded. One or two colors, threshold, invert and despeckle, then download a clean SVG of filled shapes.">
+<meta name="apple-itunes-app" content="app-id=6819163438">
+<link rel="canonical" href="https://mubaraklabs.com/image-to-svg/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MubarakLab">
+<meta property="og:title" content="Free Image to SVG Converter (no upload)">
+<meta property="og:description" content="Trace a picture to SVG in your browser. The image never leaves your device.">
+<meta property="og:url" content="https://mubaraklabs.com/image-to-svg/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Image to SVG Converter (no upload)">
+<meta name="twitter:description" content="Trace a picture to SVG in your browser. The image never leaves your device.">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="image-to-svg.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Image to SVG converter",
+  "url": "https://mubaraklabs.com/image-to-svg/",
+  "description": "A free image-to-SVG tracer that runs in the browser. The picture is processed on the device and is never uploaded.",
+  "applicationCategory": "DesignApplication",
+  "operatingSystem": "Any modern web browser",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "MubarakLab", "url": "https://mubaraklabs.com/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is my image uploaded anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The page reads your picture with your browser, traces it with JavaScript on your device and saves the SVG straight from memory. It has no upload code, and its security policy blocks it from opening network connections. Once the page has loaded, the converter also works offline." } },
+    { "@type": "Question", "name": "Is it free, and what are the limits?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It is free, with no account, watermark or daily limit. To keep it fast, pictures are scaled down to 1600 pixels on the long side before tracing, and the output has one or two colors." } },
+    { "@type": "Question", "name": "Will the SVG work with my cutting machine or laser software?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The file is plain SVG made of filled paths, which design and cutting software that imports SVG can open. It is measured in pixels, not millimeters or inches, so set the size after importing and cut a small test piece first." } },
+    { "@type": "Question", "name": "Which pictures trace best?",
+      "acceptedAnswer": { "@type": "Answer", "text": "High-contrast artwork: ink drawings, logos, silhouettes and clear scans. Photos usually need the threshold moved and specks removed. Your browser decides which file types it can open; JPEG, PNG, WebP and GIF work in current browsers." } },
+    { "@type": "Question", "name": "Can it make single-line paths or more than two colors?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. It traces the outlines of filled shapes in one or two colors. It does not make single-line centerline paths. For up to six colors on separate layers and real-world sizes, the Stencilsmith iPhone app goes further." } }
+  ]
+}
+</script>
+</head>
+<body>
+<main class="wrap tool-wrap">
+<header>
+<p><a href="../">MubarakLab</a></p>
+<h1 class="tool-title">Image to SVG converter</h1>
+<p class="tagline">Free, in your browser. <strong>Your image never leaves your device.</strong></p>
+</header>
+
+<section class="privacy-hook" aria-labelledby="hook-heading">
+<h2 id="hook-heading" class="visually-hidden">How your picture is handled</h2>
+<p><strong>No upload.</strong> Many online converters send your file to a server. This one does not. Your picture is read and traced by this page on your own phone or computer, and the SVG is saved straight from memory. The page has no upload code, and its security policy blocks it from opening network connections. Once it has loaded, it even works offline.</p>
+</section>
+
+<section aria-labelledby="tool-heading">
+<h2 id="tool-heading">1. Choose a picture</h2>
+<label id="dropzone" class="dropzone" for="file">
+<span class="dropzone-main">Choose an image</span>
+<span class="dropzone-sub">or drop it here, or paste it. JPEG, PNG, WebP or GIF; large pictures are scaled to 1600 px on the long side.</span>
+<input id="file" class="visually-hidden" type="file" accept="image/*">
+</label>
+<p><button id="sample" class="ghost-button" type="button">Try a sample drawing</button></p>
+<p id="status" class="tool-status" role="status" aria-live="polite">No picture yet. Nothing is sent anywhere when you choose one.</p>
+</section>
+
+<section id="workspace" class="workspace" aria-labelledby="adjust-heading" aria-busy="false" hidden>
+<h2 id="adjust-heading">2. Adjust the trace</h2>
+<form id="controls" class="controls" novalidate>
+<fieldset class="control-group">
+<legend>Colors</legend>
+<label class="choice"><input type="radio" name="colors" value="1" checked> One color</label>
+<label class="choice"><input type="radio" name="colors" value="2"> Two colors</label>
+</fieldset>
+
+<div class="control">
+<label id="threshold-label" for="threshold">Threshold</label>
+<input id="threshold" type="range" min="1" max="254" step="1" value="128" aria-describedby="threshold-help">
+<output id="threshold-out" for="threshold">128</output>
+<p id="threshold-help" class="help">Pixels darker than this become shape. Move it right to catch lighter lines.</p>
+</div>
+
+<div id="two-color-controls" class="control" hidden>
+<label for="threshold2">Mid-tone threshold</label>
+<input id="threshold2" type="range" min="2" max="255" step="1" value="200" aria-describedby="threshold2-help">
+<output id="threshold2-out" for="threshold2">200</output>
+<p id="threshold2-help" class="help">Two colors stacks a dark layer on top of a mid-tone layer. Pixels darker than this go into the back layer.</p>
+<p class="color-row"><label for="color2">Back layer color</label> <input id="color2" type="color" value="#8a8a8a"></p>
+</div>
+
+<p class="color-row"><label id="color1-label" for="color1">Shape color</label> <input id="color1" type="color" value="#111111"></p>
+
+<div class="control">
+<label for="despeckle">Remove specks smaller than</label>
+<input id="despeckle" type="range" min="0" max="400" step="1" value="16" aria-describedby="despeckle-help">
+<output id="despeckle-out" for="despeckle">16 px</output>
+<p id="despeckle-help" class="help">Clears dust and fills pinholes below this area, in pixels.</p>
+</div>
+
+<p class="check-row"><label><input id="invert" type="checkbox"> Invert (trace the light areas instead)</label></p>
+<p class="check-row"><label><input id="smooth" type="checkbox" checked> Smooth curves (sharp corners stay sharp)</label></p>
+
+<div class="control">
+<label for="detail">Detail</label>
+<select id="detail">
+<option value="0.6">Fine (more nodes)</option>
+<option value="1" selected>Normal</option>
+<option value="2">Simple (fewer nodes)</option>
+</select>
+</div>
+
+<p><button id="reset-settings" class="ghost-button" type="button">Reset settings</button></p>
+</form>
+
+<h2>3. Preview and download</h2>
+<p id="size-note" class="help"></p>
+<div class="previews">
+<figure>
+<img id="original-img" alt="" decoding="async">
+<figcaption>Your picture</figcaption>
+</figure>
+<figure>
+<img id="result-img" class="paper" alt="" decoding="async">
+<figcaption>SVG trace</figcaption>
+</figure>
+</div>
+<p id="stats" class="help" aria-live="polite"></p>
+<p><a id="download" class="button-link is-disabled" aria-disabled="true">Download SVG</a></p>
+<p class="help">The SVG uses filled paths with an even-odd fill, so holes such as the middle of an O stay open. Its size is in pixels; set the final size in the software you import it into.</p>
+</section>
+
+<section class="app-block" aria-labelledby="app-heading">
+<h2 id="app-heading">Open in Stencilsmith</h2>
+<p>This converter is basic on purpose. <strong>Stencilsmith</strong> for iPhone takes the same picture further, on your phone:</p>
+<ul>
+<li><strong>Layers:</strong> split artwork into as many as six ink colors, each on its own layer (beyond two with the optional Stencilsmith Pro).</li>
+<li><strong>Real size:</strong> SVG with its width and height in millimeters or inches, and an actual-size PDF tiled across A4 or Letter.</li>
+<li><strong>Stencil bridges:</strong> find loose islands, like the center of an O, and add bridges that keep a stencil in one piece.</li>
+<li><strong>Camera capture:</strong> photograph a paper drawing, then crop, straighten and correct the perspective.</li>
+<li><strong>Offline:</strong> tracing, node editing and export run on your iPhone, with no account.</li>
+</ul>
+<p>Free to download for iPhone (iOS 26 or later). Stencilsmith Pro is an optional one-time purchase.</p>
+<p><a class="store-badge" href="https://apps.apple.com/app/apple-store/id6819163438?pt=127572059&amp;ct=webtool-stencilsmith-202611&amp;mt=8"><span class="store-badge-label"><span class="store-badge-small">Download on the</span><span class="store-badge-big">App Store</span></span></a> <a href="../stencilsmith/">More about Stencilsmith</a></p>
+</section>
+
+<section class="faq" aria-labelledby="faq-heading">
+<h2 id="faq-heading">Questions</h2>
+<details>
+<summary>Is my image uploaded anywhere?</summary>
+<p>No. The page reads your picture with your browser, traces it with JavaScript on your device and saves the SVG straight from memory. It has no upload code, and its security policy blocks it from opening network connections. Once the page has loaded, the converter also works offline.</p>
+</details>
+<details>
+<summary>Is it free, and what are the limits?</summary>
+<p>It is free, with no account, watermark or daily limit. To keep it fast, pictures are scaled down to 1600 pixels on the long side before tracing, and the output has one or two colors.</p>
+</details>
+<details>
+<summary>Will the SVG work with my cutting machine or laser software?</summary>
+<p>The file is plain SVG made of filled paths, which design and cutting software that imports SVG can open. It is measured in pixels, not millimeters or inches, so set the size after importing and cut a small test piece first.</p>
+</details>
+<details>
+<summary>Which pictures trace best?</summary>
+<p>High-contrast artwork: ink drawings, logos, silhouettes and clear scans. Photos usually need the threshold moved and specks removed. Your browser decides which file types it can open; JPEG, PNG, WebP and GIF work in current browsers.</p>
+</details>
+<details>
+<summary>Can it make single-line paths or more than two colors?</summary>
+<p>No. It traces the outlines of filled shapes in one or two colors. It does not make single-line centerline paths. For up to six colors on separate layers and real-world sizes, the Stencilsmith iPhone app goes further.</p>
+</details>
+</section>
+
+<footer>
+<p><a href="../">MubarakLab</a> · <a href="../stencilsmith/">Stencilsmith</a></p>
+<p>No analytics, ads or cookies. The page remembers your slider settings in this browser only; your pictures are never stored.</p>
+<p>© 2026 Mubarak Almahmeed</p>
+</footer>
+</main>
+<script src="tracer.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
